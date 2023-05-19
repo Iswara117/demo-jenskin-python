@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('pull') {
+    stage('Pull') {
       steps {
-        node('master'){
+        node ('master') {
           checkout scm
         }
       }
@@ -11,8 +11,8 @@ pipeline {
 
     stage('build') {
       steps {
-        node('master'){
-           sh 'echo "connecting"'
+        node ('master') {
+          sh 'echo "hello ini pipeline"'
         }
       }
     }
