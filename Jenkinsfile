@@ -3,15 +3,15 @@ pipeline {
   stages {
     stage('pull') {
       steps {
-        node('naster'){
-          checkout scn
+        node('master'){
+          checkout scm
         }
       }
     }
 
     stage('build') {
       steps {
-        node('naster'){
+        node('master'){
            sh 'echo "connecting"'
         }
       }
