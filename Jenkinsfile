@@ -3,13 +3,17 @@ pipeline {
   stages {
     stage('pull') {
       steps {
-        git(credentialsId: 'credentials-python-jenkins', url: 'git@github.com:Iswara117/demo-jenskin-python.git', branch: 'main')
+        node('naster'){
+          checkout scn
+        }
       }
     }
 
     stage('build') {
       steps {
-        sh 'echo "connecting"'
+        node('naster'){
+           sh 'echo "connecting"'
+        }
       }
     }
 
